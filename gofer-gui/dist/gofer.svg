@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 332" width="820" height="332">
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 250px;fill: #0090ff;font-weight: 400;font-family: "Orbitron-ExtraBold", "Orbitron" } 
+		.t1 { font-size: 250px;fill: #ffffff;font-weight: 400;font-family: "Orbitron-Bold", "Orbitron" } 
+	</style>
+	<text id="Gofer" transform="translate(8,262)">
+		<tspan x="0" y="0" class="t0">G</tspan><tspan  y="0" class="t0">o</tspan><tspan  y="0" class="t1">f</tspan><tspan  y="0" class="t1">e</tspan><tspan  y="0" class="t1">r
+</tspan>
+	</text>
+</svg>

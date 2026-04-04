@@ -1,0 +1,25 @@
+{
+    "port": 3005,
+    "users": [
+        { "name": "root", "pass": "root", "sudo": true },
+        { "name": "user", "pass": "user" }
+    ],
+    "blacklist": [],
+    "whitelist": [],
+    "gui": {
+        "use": true,
+        "src": "f",
+        "to": "gofer-gui/dist"
+    },
+    "cache": {
+        "low-effort": false,
+        "memory": true,
+        "path": "/home/lsh/Projects/tools/gofer/cache",
+        "max-size": 1000000000,
+        "max-unused-age": 10
+    },
+    "storage": {
+        "path": "/home/lsh/Projects/tools/gofer/storage",
+        "max-size": 5000000000
+    }
+}
