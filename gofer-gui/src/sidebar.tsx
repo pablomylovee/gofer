@@ -1,16 +1,27 @@
 import {path, SeeDir} from "./App";
 import { createSignal, For } from "solid-js";
+import Cookies from "js-cookie";
 
 export default function Sidebar() {
     let favourites: Array<{n: string, p: string}> = [];
-    cookieStore.get("fav").then(c => {
-        if (!c) return;
-        if (typeof c.value === "undefined") return;
-        favourites = JSON.parse(c.value);
-    });
-    const [fav, _] = createSignal([
+    const favCookie: string | undefined = Cookies.get("fav");
+
+    if (favCookie) {
+      try {
+        favourites = favCookie.split(";;").map(v => {
+          if (v === "") return {n: "", p: ""};
+          const parsed = JSON.parse(v);
+          return (parsed?.n && parsed?.p) ? parsed : {n: "", p: ""};
+        });
+      } catch {
+        console.warn("Invalid fav cookie format, resetting");
+        favourites = [];
+      }
+    }
+
+    const [fav] = createSignal([
       {n: "Home", p: "/"}, 
-      ...favourites
+      ...favourites.filter(v => v.n && v.p)
     ]);
     const click = (e: Event, to: string) => {
         SeeDir(to);
